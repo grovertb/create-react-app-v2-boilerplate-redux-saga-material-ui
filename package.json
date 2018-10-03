@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://grovertb.github.io/create-react-app-v2-boilerplate-redux-saga-material-ui",
   "dependencies": {
+    "@material-ui/core": "^3.1.2",
+    "@material-ui/icons": "^3.0.1",
     "extensible-duck": "^1.4.0",
     "gh-pages": "^2.0.0",
     "history": "^4.7.2",

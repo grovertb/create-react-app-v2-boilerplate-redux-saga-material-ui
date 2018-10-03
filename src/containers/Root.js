@@ -1,10 +1,1 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-
-export default class Root extends Component {
-  render() {
-    const { store, children } = this.props
-
-    return <Provider store={store}>{children}</Provider>
-  }
-}
+module.exports = process.env.NODE_ENV === 'production' ? require('./Root.prod') : require('./Root.dev')
