@@ -53,7 +53,8 @@ function registerValidSW(swUrl, config) {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {
-          if(installingWorker.state === 'installed')
+          if(installingWorker.state === 'installed') {
+            console.log(config)
             if(navigator.serviceWorker.controller) {
               // At this point, the old content will have been purged and
               // the fresh content will have been added to the cache.
@@ -72,6 +73,7 @@ function registerValidSW(swUrl, config) {
               // Execute callback
               // if(config.onSuccess) config.onSuccess(registration)
             }
+          }
         }
       }
     })
