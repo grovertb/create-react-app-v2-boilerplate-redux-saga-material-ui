@@ -10,7 +10,7 @@ class Home extends Component {
         <header className='App-header'>
           <img alt='logo' className='App-logo' src={logo} />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Edit <code>src/containers/Home.js</code> and save to reload.
           </p>
           <a
             className='App-link' href='https://reactjs.org' rel='noopener noreferrer'
