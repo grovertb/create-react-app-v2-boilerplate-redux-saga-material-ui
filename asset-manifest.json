@@ -1,7 +1,7 @@
 {
   "main.css": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/css/main.ac64a936.chunk.css",
-  "main.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.6511e318.chunk.js",
-  "main.js.map": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.6511e318.chunk.js.map",
+  "main.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.af85fa57.chunk.js",
+  "main.js.map": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.af85fa57.chunk.js.map",
   "static/js/1.d1d2c4f0.chunk.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/1.d1d2c4f0.chunk.js",
   "static/js/1.d1d2c4f0.chunk.js.map": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/1.d1d2c4f0.chunk.js.map",
   "runtime~main.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/runtime~main.d7c9d1fd.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/media/logo.5d5d9eef.svg",
   "static/css/main.ac64a936.chunk.css.map": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/css/main.ac64a936.chunk.css.map",
   "index.html": "/create-react-app-v2-boilerplate-redux-saga-material-ui/index.html",
-  "precache-manifest.b8b3b06e48319ee2b7c58a50b187ebef.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/precache-manifest.b8b3b06e48319ee2b7c58a50b187ebef.js",
+  "precache-manifest.69748929a8388303988c97790f133e5b.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/precache-manifest.69748929a8388303988c97790f133e5b.js",
   "service-worker.js": "/create-react-app-v2-boilerplate-redux-saga-material-ui/service-worker.js"
 }
