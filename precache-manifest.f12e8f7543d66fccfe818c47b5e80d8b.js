@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/runtime~main.d7c9d1fd.js"
   },
   {
-    "revision": "af85fa5787d5c1e47e5e",
-    "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.af85fa57.chunk.js"
+    "revision": "cf53cf03428e390b4858",
+    "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/main.cf53cf03.chunk.js"
   },
   {
     "revision": "d1d2c4f0b30b06b4dfeb",
     "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/js/1.d1d2c4f0.chunk.js"
   },
   {
-    "revision": "af85fa5787d5c1e47e5e",
+    "revision": "cf53cf03428e390b4858",
     "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/static/css/main.ac64a936.chunk.css"
   },
   {
-    "revision": "5506605d836cf22810aa704bafbadeaa",
+    "revision": "59a8218303688d5a05216afdb43e4d44",
     "url": "/create-react-app-v2-boilerplate-redux-saga-material-ui/index.html"
   }
 ];
