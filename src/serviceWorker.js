@@ -16,7 +16,7 @@ const isLocalhost = Boolean(
     window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
 )
 
-export function register(config) {
+export function register(config = {}) {
   if(process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location)
@@ -53,8 +53,7 @@ function registerValidSW(swUrl, config) {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing
         installingWorker.onstatechange = () => {
-          if(installingWorker.state === 'installed') {
-            console.log(config)
+          if(installingWorker.state === 'installed')
             if(navigator.serviceWorker.controller) {
               // At this point, the old content will have been purged and
               // the fresh content will have been added to the cache.
@@ -71,9 +70,8 @@ function registerValidSW(swUrl, config) {
               console.log('Content is cached for offline use.')
 
               // Execute callback
-              // if(config.onSuccess) config.onSuccess(registration)
+              if(config.onSuccess) config.onSuccess(registration)
             }
-          }
         }
       }
     })
