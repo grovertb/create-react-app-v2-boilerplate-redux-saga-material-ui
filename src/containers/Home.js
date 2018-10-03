@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from '../sources/logo.svg'
 
 import '../components/App.css'
+import Typography from '@material-ui/core/Typography'
 
 class Home extends Component {
   render() {
@@ -9,9 +10,9 @@ class Home extends Component {
       <div className='App'>
         <header className='App-header'>
           <img alt='logo' className='App-logo' src={logo} />
-          <p>
+          <Typography color='inherit' variant='title'>
             Edit <code>src/containers/Home.js</code> and save to reload.
-          </p>
+          </Typography>
           <a
             className='App-link' href='https://reactjs.org' rel='noopener noreferrer'
             target='_blank'>

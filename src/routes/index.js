@@ -13,14 +13,15 @@ import { ConnectedRouter } from 'react-router-redux'
 //   LoadingComponent: () => <Loading />
 // })
 
+import Dashboard from '../containers/Dashboard'
 import Home from '../containers/Home'
 
 export default history => (
   <ConnectedRouter history={history}>
     <Switch>
-      {/* <Dashboard history={history}> */}
-      <Route component={Home} exact path='/' />
-      {/* </Dashboard> */}
+      <Dashboard history={history}>
+        <Route component={Home} exact path='/' />
+      </Dashboard>
     </Switch>
   </ConnectedRouter>
 )
