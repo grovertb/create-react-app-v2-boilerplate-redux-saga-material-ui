@@ -5,12 +5,14 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './components/index.css'
 
-const render = Component => {
-  const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate
-  renderMethod(<Component />, document.getElementById('root'))
-}
+// const render = Component => {
+//   const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate
+//   renderMethod(<Component />, document.getElementById('root'))
+// }
 
-render(App)
+// render(App)
+
+ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
