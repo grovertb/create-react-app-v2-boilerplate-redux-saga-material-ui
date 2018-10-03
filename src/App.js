@@ -1,25 +1,9 @@
-import React, { Component } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react'
 
-class App extends Component {
-  render() {
-    return (
-      <div className='App'>
-        <header className='App-header'>
-          <img alt='logo' className='App-logo' src={logo} />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className='App-link' href='https://reactjs.org' rel='noopener noreferrer'
-            target='_blank'>
-            create-react-app-v2
-          </a>
-        </header>
-      </div>
-    )
-  }
-}
+import store, { history } from './store/configureStore'
+import createRoutes from './routes'
+import Root from './containers/Root'
 
-export default App
+const routes = createRoutes(history)
+
+export default () => <Root store={store}>{routes}</Root>
