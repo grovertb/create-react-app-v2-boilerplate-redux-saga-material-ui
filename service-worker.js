@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/create-react-app-v2-boilerplate-redux-saga-material-ui/precache-manifest.5f5ac6efd0f31c55a1568fe2965fc9df.js"
+  "/create-react-app-v2-boilerplate-redux-saga-material-ui/precache-manifest.f0d3f7c88c95f788b2b53faced90ed74.js"
 );
 
 workbox.clientsClaim();
