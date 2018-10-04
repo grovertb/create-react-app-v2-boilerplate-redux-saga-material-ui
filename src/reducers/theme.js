@@ -1,4 +1,5 @@
 import base from './base'
+import produce from 'immer'
 
 export default base({
   namespace   : 'boilerplate',
@@ -8,17 +9,22 @@ export default base({
   }
 }).extend({
   types  : [ 'UPDATE_THEME' ],
-  reducer: (state, action, { types }) => {
-    switch (action.type) {
-      case types.UPDATE_THEME:
-        return {
-          ...state,
-          style: action.theme
-        }
-      default:
-        return state
-    }
-  },
+  reducer: (state, action, { types }) =>
+    produce(state, draft => {
+      switch (action.type) {
+        case types.UPDATE_THEME:
+          localStorage.setItem('style', action.theme)
+
+          return {
+            ...state,
+            style: action.theme
+          }
+        default:
+          draft.style = localStorage.getItem('style') || state.style
+
+          return
+      }
+    }),
   creators: ({ types: { UPDATE_THEME } }) => ({
     updateTheme: theme => ({ type: UPDATE_THEME, theme })
   })

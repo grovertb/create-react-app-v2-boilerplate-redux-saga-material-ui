@@ -20,7 +20,7 @@ export default history => (
   <ConnectedRouter history={history}>
     <Switch>
       <Dashboard history={history}>
-        <Route component={Home} exact path='/' />
+        <Route component={Home} exact path={`${process.env.PUBLIC_URL}/`} />
       </Dashboard>
     </Switch>
   </ConnectedRouter>
