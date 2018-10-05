@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^3.1.2",
     "@material-ui/icons": "^3.0.1",
+    "cross-env": "^5.2.0",
     "extensible-duck": "^1.4.0",
     "gh-pages": "^2.0.0",
     "history": "^4.7.2",
@@ -30,6 +31,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "build": "react-scripts build",
+    "serve": "cross-env NODE_ENV=production node ./server/index.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier-eslint --write \"{src,server}/**/*.js\" && eslint . --ext .js --fix",
