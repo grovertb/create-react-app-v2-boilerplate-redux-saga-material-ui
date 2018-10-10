@@ -10,7 +10,7 @@ import MaterialTheme from '../lib/MaterialTheme'
 
 import themeReducer from '../reducers/theme'
 
-let muiTheme
+let muiTheme = createMuiTheme(MaterialTheme.ligth)
 
 class Root extends Component {
   constructor(props) {

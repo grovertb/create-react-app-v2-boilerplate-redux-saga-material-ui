@@ -2,10 +2,13 @@
 require('ignore-styles')
 
 // Set up babel to do its thing... env for the latest toys, react-app for CRA
-require('babel-register')({
-  ignore : /\/(build|node_modules)\//,
-  presets: [ 'env', 'react-app' ]
+require('@babel/register')({
+  ignore : [ /\/(build|node_modules)\// ],
+  presets: [ '@babel/env', '@babel/preset-react' ],
+  plugins: [ '@babel/plugin-proposal-class-properties', 'babel-plugin-dynamic-import-node-babel-7' ]
 })
 
 // Now that the nonsense is over... load up the server entry point
+require('@babel/polyfill')
+
 require('./server')

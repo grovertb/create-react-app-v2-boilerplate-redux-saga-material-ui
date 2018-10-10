@@ -20,7 +20,7 @@ export default base({
             style: action.theme
           }
         default:
-          draft.style = localStorage.getItem('style') || state.style
+          draft.style = typeof window !== 'undefined' ? localStorage.getItem('style') || state.style : state.style
 
           return
       }

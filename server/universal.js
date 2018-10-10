@@ -5,16 +5,18 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import Helmet from 'react-helmet'
 
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
-import { Route } from 'react-router-dom'
+// import { Provider } from 'react-redux'
+// import { ConnectedRouter } from 'react-router-redux'
+// import { Route } from 'react-router-dom'
 import createServerStore from './store'
+import createRoutes from '../src/routes'
+// import createServerStore from '../src/store/prod'
 
-import App from '../src/containers/app'
+import Root from '../src/containers/Root'
 
 // A simple helper function to prepare the HTML markup
 const prepHTML = (data, { html, head, body }) => {
-  data = data.replace('<html lang="en">', `<html ${html}`)
+  data = data.replace('<html lang="en">', `<html ${html} lang="es">`)
   data = data.replace('</head>', `${head}</head>`)
   data = data.replace('<div id="root"></div>', `<div id="root">${body}</div>`)
 
@@ -36,14 +38,17 @@ const universalLoader = (req, res) => {
     // Create a store and sense of history based on the current path
     const { store, history } = createServerStore(req.path)
 
+    const routes = createRoutes(history, req.protocol + '://' + req.headers.host, store)
     // Render App in React
-    const routeMarkup = renderToString(
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <Route component={App} />
-        </ConnectedRouter>
-      </Provider>
-    )
+    const app = <Root store={store}>{routes}</Root>
+    const routeMarkup = renderToString(app)
+    // const routeMarkup = renderToString(
+    //   <Provider store={store}>
+    //     <ConnectedRouter history={history}>
+    //       <Route component={App} />
+    //     </ConnectedRouter>
+    //   </Provider>
+    // )
 
     // Let Helmet know to insert the right tags
     const helmet = Helmet.renderStatic()

@@ -57,7 +57,7 @@ class Home extends Component {
         <div className='App'>
           <header className='App-header'>
             <img alt='logo' className='App-logo' src={logo} />
-            <Typography color='inherit' variant='title'>
+            <Typography color='inherit' variant='h5'>
               Edit <code>src/containers/Home.js</code> and save to reload.
             </Typography>
             <a
