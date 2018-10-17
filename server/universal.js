@@ -5,14 +5,10 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import Helmet from 'react-helmet'
 
-// import { Provider } from 'react-redux'
-// import { ConnectedRouter } from 'react-router-redux'
-// import { Route } from 'react-router-dom'
 import createServerStore from './store'
 import createRoutes from '../src/routes'
-// import createServerStore from '../src/store/prod'
 
-import Root from '../src/containers/Root'
+import Root, { sheetsRegistry } from '../src/containers/Root'
 
 // A simple helper function to prepare the HTML markup
 const prepHTML = (data, { html, head, body }) => {
@@ -40,15 +36,9 @@ const universalLoader = (req, res) => {
 
     const routes = createRoutes(history, req.protocol + '://' + req.headers.host, store)
     // Render App in React
-    const app = <Root store={store}>{routes}</Root>
-    const routeMarkup = renderToString(app)
-    // const routeMarkup = renderToString(
-    //   <Provider store={store}>
-    //     <ConnectedRouter history={history}>
-    //       <Route component={App} />
-    //     </ConnectedRouter>
-    //   </Provider>
-    // )
+    const routeMarkup = renderToString(<Root store={store}>{routes}</Root>)
+
+    const materialStyle = `<style id="jss-server-side">${sheetsRegistry.toString()}</style>`
 
     // Let Helmet know to insert the right tags
     const helmet = Helmet.renderStatic()
@@ -57,7 +47,7 @@ const universalLoader = (req, res) => {
     const html = prepHTML(htmlData, {
       html: helmet.htmlAttributes.toString(),
       head: helmet.title.toString() + helmet.meta.toString() + helmet.link.toString(),
-      body: routeMarkup
+      body: materialStyle + routeMarkup
     })
 
     // Up, up, and away...

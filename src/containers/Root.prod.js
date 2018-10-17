@@ -6,9 +6,18 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import MaterialTheme from '../lib/MaterialTheme'
+import { SheetsRegistry } from 'jss'
+import JssProvider from 'react-jss/lib/JssProvider'
 
+import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
+
+import MaterialTheme from '../lib/MaterialTheme'
 import themeReducer from '../reducers/theme'
+
+const generateClassName = createGenerateClassName()
+const sheetsManager = new Map()
+
+export const sheetsRegistry = new SheetsRegistry()
 
 let muiTheme = createMuiTheme(MaterialTheme.ligth)
 
@@ -17,6 +26,11 @@ class Root extends Component {
     super(props)
     this.state = {}
     muiTheme = createMuiTheme(MaterialTheme[this.props.theme.style])
+  }
+
+  componentDidMount() {
+    const jssStyles = document.getElementById('jss-server-side')
+    if(jssStyles && jssStyles.parentNode) jssStyles.parentNode.removeChild(jssStyles)
   }
 
   shouldComponentUpdate(nextProps) {
@@ -37,14 +51,16 @@ class Root extends Component {
     const { store, children } = this.props
 
     return (
-      <MuiThemeProvider theme={muiTheme}>
-        <Provider store={store}>
-          <Fragment>
-            <CssBaseline />
-            {children}
-          </Fragment>
-        </Provider>
-      </MuiThemeProvider>
+      <JssProvider generateClassName={generateClassName} registry={sheetsRegistry}>
+        <MuiThemeProvider sheetsManager={sheetsManager} theme={muiTheme}>
+          <Provider store={store}>
+            <Fragment>
+              <CssBaseline />
+              {children}
+            </Fragment>
+          </Provider>
+        </MuiThemeProvider>
+      </JssProvider>
     )
   }
 }

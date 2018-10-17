@@ -1,5 +1,5 @@
 import indigo from '@material-ui/core/colors/indigo'
-import blue from '@material-ui/core/colors/blue'
+import teal from '@material-ui/core/colors/teal'
 
 export default {
   ligth: {
@@ -9,7 +9,7 @@ export default {
         main: indigo[500]
       },
       secondary: {
-        main: blue[500]
+        main: teal[500]
       }
     }
   },
@@ -17,7 +17,7 @@ export default {
     palette: {
       type   : 'dark',
       primary: {
-        main: blue[500]
+        main: teal[500]
       },
       secondary: {
         main: indigo[500]
