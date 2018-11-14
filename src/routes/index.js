@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux'
 // import Loadable from 'react-loadable'
 import loadable from 'loadable-components'
 
-import Loading from '../components/Common/Loading'
+import Loading from '../components/common/Loading'
 
 // import Dashboard from '../containers/Dashboard'
 // import Home from '../containers/Home'
