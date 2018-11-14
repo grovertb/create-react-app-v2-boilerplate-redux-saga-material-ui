@@ -6,7 +6,7 @@ import path from 'path'
 
 import index from './routes'
 import api from './api'
-import universalLoader from './universal'
+// import universalLoader from './universal'
 
 // Create our express app (using the port optionally specified)
 const app = express()
@@ -22,7 +22,7 @@ app.use(morgan('dev'))
 app.use('/', index)
 app.use(express.static(path.resolve(__dirname, '../build')))
 app.use('/api', api)
-app.use('/', universalLoader)
+// app.use('/', universalLoader)
 
 // Let's rock
 app.listen(PORT, () => {

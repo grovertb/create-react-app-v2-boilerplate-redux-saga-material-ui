@@ -1,8 +1,15 @@
 import indigo from '@material-ui/core/colors/indigo'
 import teal from '@material-ui/core/colors/teal'
 
+const configDefault = {
+  typography: {
+    useNextVariants: true
+  }
+}
+
 export default {
   ligth: {
+    ...configDefault,
     palette: {
       type   : 'light',
       primary: {
@@ -14,6 +21,7 @@ export default {
     }
   },
   dark: {
+    ...configDefault,
     palette: {
       type   : 'dark',
       primary: {

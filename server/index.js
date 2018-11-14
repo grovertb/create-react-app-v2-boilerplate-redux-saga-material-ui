@@ -5,7 +5,7 @@ require('ignore-styles')
 require('@babel/register')({
   ignore : [ /\/(build|node_modules)\// ],
   presets: [ '@babel/env', '@babel/preset-react' ],
-  plugins: [ '@babel/plugin-proposal-class-properties', 'babel-plugin-dynamic-import-node-babel-7' ]
+  plugins: [ '@babel/plugin-proposal-class-properties', 'babel-plugin-dynamic-import-node-babel-7', 'loadable-components/babel' ]
 })
 
 // Now that the nonsense is over... load up the server entry point
